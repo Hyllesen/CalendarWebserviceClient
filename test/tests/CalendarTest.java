@@ -48,6 +48,10 @@ public class CalendarTest {
     // @Test
     // public void hello() {}
     
+    /***
+     * One test which adds an appointment for a date and then gets the appointment
+        for that date: make sure that the texts are the same
+     */
     @Test
     public void addAppointmentTest() {
         try {
@@ -55,6 +59,24 @@ public class CalendarTest {
             XMLGregorianCalendar date = df.newXMLGregorianCalendar("2016-09-15");
             addAppointment(date, "Scrub toilets");
             assertEquals("Scrub toilets", getAppointment(date));
+        } catch (DatatypeConfigurationException ex) {
+            Logger.getLogger(CalendarTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * a second test that adds an appointment for the same date as in the
+        first test, but with a different text for the appointment.
+     * @param appointmentDate
+     * @param appointmentText 
+     */
+    @Test
+    public void addAppointmentDuplicateTest() {
+        try {
+            DatatypeFactory df = DatatypeFactory.newInstance();
+            XMLGregorianCalendar date = df.newXMLGregorianCalendar("2016-09-15");
+            addAppointment(date, "Scrub toilets again");
+            assertEquals("Scrub toilets again", getAppointment(date));
         } catch (DatatypeConfigurationException ex) {
             Logger.getLogger(CalendarTest.class.getName()).log(Level.SEVERE, null, ex);
         }
