@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.imm.dtu.dk/calendar" name="calendar" targetNamespace="http://ws.imm.dtu.dk/calendar">
+<wsdl:import namespace="http://ws.imm.dtu.dk/calendar" location="http://desktop-qf299to:8080/CalendarApplication/calendarServiceService?wsdl=1"/>
+<wsdl:binding name="calendarServiceBinding" type="tns:calendarServicePortType">
+<soap:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+<wsdl:operation name="addAppointment">
+<soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="addAppointment_action"/>
+<wsdl:input name="input1">
+<soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" namespace="http://ws.imm.dtu.dk/calendar" use="literal"/>
+</wsdl:input>
+<wsdl:output name="output1">
+<soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" namespace="http://ws.imm.dtu.dk/calendar" use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="calendarServiceService">
+<wsdl:port name="calendarServicePort" binding="tns:calendarServiceBinding">
+<soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://desktop-qf299to:8080/CalendarApplication/calendarServiceService"/>
+</wsdl:port>
+</wsdl:service>
+</definitions>
